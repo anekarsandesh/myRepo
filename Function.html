@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Function</h1>
+    <script>
+        // function add(){
+         //       console.log("hello");            
+        // }
+          //  add();
+
+        // const fun = ()=>{
+        //     console.log("hello1111");            
+        // }
+        //  console.log(fun());
+
+
+        const fun = (a,b)=>{
+        console.log(a+b);            
+        }
+
+        console.log(fun(10,20));
+
+        //  const fun = (a,b)=>{
+        //  console.log(argumnets.length);            
+        // }
+        // console.log(fun(10,20));
+
+
+
+        let fun1=function(){
+            console.log(fun1);
+        };
+        console.log(fun1());
+
+        setTimeout(function(){
+            console.log("inside the setTime out");
+        },3000);
+
+
+        const de=()=>{
+            console.log("Hello Anonymous function");
+        }
+
+        console.log(de());
+
+
+        let square=(x)=>{
+            return x*x;
+        }
+
+        console.log(square(5));
+
+
+        function sum(a,b){
+            console.log(a+b);
+        }
+
+        function cal(a,b,call){
+            call(a,b);
+
+        }
+        cal(5,1,sum);
+
+
+
+        // function getData(id){
+
+        //     setTimeout(()=>{
+        //         console.log("data one")
+        //     },3000)
+        // }
+
+        // getData(5);
+
+
+        function getData(id,datanext){
+
+             setTimeout(()=>{
+                  console.log("data "+id);
+
+                  if(datanext){
+                  datanext();
+                  }
+        },3000)
+        }
+
+    getData(5,()=>{
+         getData(2,()=>{
+            getData(3);
+         });
+    });
+
+    // getData(5,()=>{})
+
+    // The callback hell is problem in javascript; to solve this problem promises are introduced 
+        
+    </script>
+</body>
+</html>

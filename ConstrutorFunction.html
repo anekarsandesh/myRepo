@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Construtor Function </h1>
+
+    <script>
+            // let person1={
+            //     firstname:"Sandesh",
+            //     LastName:"Anekar",
+            // }
+            // console.log(person1);
+
+
+
+
+            function Person(firstname,lastname){
+                this.firstname=firstname;
+                this.lastname=lastname;
+            }
+
+            let p1=new Person("omsa","sass");
+            console.log(p1);
+
+
+
+
+            function Emp(firstname,lastname){
+                this.firstname=firstname;
+                this.lastname=lastname;
+
+
+                this.getName=function(){
+                    console.log(this.firstname,this.lastname);
+                }
+            }
+
+            let e=new Emp("Sujay","King");
+            console.log(e.getName());
+    </script>
+</body>
+</html>

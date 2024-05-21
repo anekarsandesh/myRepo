@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Function method</h1>
+
+    <script>
+
+    //     let person={
+    //         name:"Sanddesh",
+    //         lastname:"Anekar",
+    //         personData:function(){
+    //             console.log(this.name,this.lastname);
+    //         }
+
+    //     }
+
+    //     let person2={
+    //         name:"asasasa",
+    //         lastname:"Andsdsdsdekar",
+          
+    //     }
+    //     person.personData();
+
+    //   person.personData.call(person2);
+
+   let person ={
+            name:"Sanddesh",
+            lastname:"Anekar",
+            
+        }
+
+        let person2={
+            name:"asasasa",
+            lastname:"Andsdsdsdekar",
+          
+        }
+
+        function personData(){
+                console.log(this.name,this.lastname);
+            }
+
+     //   person.personData();
+
+     // person.personData.call(person2);
+    personData.call(person);
+    personData.call(person2);
+    
+    </script>
+</body>
+</html>

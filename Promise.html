@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Promise</h1>
+
+    <script>
+
+        const p1=new Promise(function(resolve,reject){
+
+            setTimeout(function(){
+                console.log("Hello");
+                resolve();
+            },5000)
+        })
+
+        p1.then(function(){
+            console.log("promised consumed");
+                     new Promise(function(resolve,reject){
+                         setTimeout(function(){
+                                  console.log("next demo");
+                          resolve();
+                         },1000)
+             }).then(function(){
+                console.log("Inside then");
+          })
+          })
+
+
+        // new Promise(function(resolve,reject){
+
+        //     setTimeout(function(){
+        //         console.log("next demo");
+        //         resolve();
+        //     },1000)
+        // }).then(function(){
+        //     console.log("Inside then");
+        // })
+
+
+        new Promise(function(resolve,reject){
+
+            setTimeout(function(){
+                console.log("Inside setTimout");
+                resolve({username:"Sandesh",password:"anekar@"})
+            },7000)
+        }).then(function(user){
+            console.log(user);
+        })
+
+
+
+
+        // const getdata=()=>{
+        //     return new Promise((resolve,reject)=>{
+        //         console.log("i am promise");
+        //       //resolve("Inside then then then")
+        //        reject("Inside catch")
+        //     })
+        // }
+        // const sd1=getdata();
+        // sd1.then((resp)=>{
+        //     console.log(resp)
+        // });
+
+        // sd1.catch((err)=>{
+        //     console.log(err);
+        // })
+
+
+    //     const getdata=(id)=>{
+    //         return new Promise((resolve,reject)=>{
+               
+    //            setTimeout(()=>{
+    //              console.log("i am promise"+id);
+    //              resolve("Inside then then then")
+    //            },5000)
+                
+    //            //reject("Inside catch")
+    //         })
+    //     }
+    //    // BY USING PROMISES WE REDUCED THE CALLBACK OR CALLBACK HELL
+    //     getdata(5).then((resp)=>{
+    //         console.log(resp);
+
+    //         getdata(6).then((resp)=>{
+    //             console.log(resp);
+    //         })
+    //     })
+    
+
+
+        // when we wirte async to the function then it return the promise 
+        // promise zoparyant pending aahe toparynat wait kart rahnar (await)
+        // await pause the exceuation of surrounding code
+        // await keyword is fkat asyn function made cha laval jatoya
+      
+
+
+
+        const getdata=(id)=>{
+            return new Promise((resolve,reject)=>{
+               
+               setTimeout(()=>{
+                 console.log("i am promise"+id);
+                 resolve("Inside then then then")
+               },5000)
+                
+               //reject("Inside catch")
+            })
+        }
+     
+        async function getAlldata(){
+            await getdata(10);
+            await getdata(20);
+            await getdata(30);
+        }
+
+        getAlldata();
+        
+    </script>
+</body>
+</html>
